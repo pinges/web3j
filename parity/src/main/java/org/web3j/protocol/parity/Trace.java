@@ -13,6 +13,7 @@
 package org.web3j.protocol.parity;
 
 import java.math.BigInteger;
+import java.util.Collection;
 import java.util.List;
 
 import org.web3j.protocol.core.DefaultBlockParameter;
@@ -27,6 +28,11 @@ import org.web3j.protocol.parity.methods.response.ParityTracesResponse;
 public interface Trace {
     Request<?, ParityFullTraceResponse> traceCall(
             Transaction transaction, List<String> traceTypes, DefaultBlockParameter blockParameter);
+
+    Request<?, ParityFullTraceResponse> traceCallMany(
+            Collection<Transaction> transactions,
+            List<String> traceTypes,
+            DefaultBlockParameter blockParameter);
 
     Request<?, ParityFullTraceResponse> traceRawTransaction(String data, List<String> traceTypes);
 

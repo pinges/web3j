@@ -191,6 +191,7 @@ public class HttpService extends Service {
             // it can be re-read and used to populate the rawResponse field.
 
             BufferedSource source = responseBody.source();
+            System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&RAW: " + responseBody.string());
             source.request(Long.MAX_VALUE); // Buffer the entire body
             Buffer buffer = source.getBuffer();
 
